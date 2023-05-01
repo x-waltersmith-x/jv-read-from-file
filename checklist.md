@@ -1,26 +1,30 @@
 ### Common mistakes
 
 #### Create variables with informative names.
-```
+
 Bad naming:
+```java
 BufferedReader br = new BufferedReader(new FileReader(fileName))
 ```  
-```
-Good naming: 
+
+Good naming:
+```java
 BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName))
 ```  
 
 #### Use constants where applicable.
 If you have strange strings or numbers in the code it's better to declare them as constants.
 The name of the constant should display this object's purpose.
-```
+
 Bad practice:
+```java
     public boolean startWithLetter(String word) {
         return word.startsWith("d"); // why do we use 'd' here???
     }
 ```
-```
+
 Good practice:
+```java
     private static final String SPECIFIED_CHARACTER = "d";
     
     public boolean startWithLetter(String word) {
@@ -38,7 +42,7 @@ and will be closed automatically.
 #### Don't ignore exceptions.
 Leaving empty catch block or `e.printStackTrace` here is a bad practice. 
 Better re-throw `RuntimeException` with original exception in the parameters:
-```
+```java
 catch (Exception e) {
     throw new RuntimeException(e);
 }
