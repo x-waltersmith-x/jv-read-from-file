@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-
 public class FileWork {
     public String[] readFromFile(String fileName) {
         List<String> wWords = new ArrayList<>();
@@ -26,7 +25,6 @@ public class FileWork {
                         }
                     }
                 }
-
             }
         } catch (IOException e) {
             return new String[0];
@@ -36,5 +34,4 @@ public class FileWork {
         Arrays.sort(result);
         return result;
     }
-
 }
