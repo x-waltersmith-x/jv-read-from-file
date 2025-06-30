@@ -9,7 +9,7 @@ import java.util.List;
 
 public class FileWork {
     public String[] readFromFile(String fileName) {
-        List<String> wWords = new ArrayList<>();
+        List<String> wordsList = new ArrayList<>();
 
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
             String line;
@@ -21,7 +21,7 @@ public class FileWork {
                         String cleanWord = word.replaceAll("\\p{Punct}", "").toLowerCase();
 
                         if (cleanWord.startsWith("w")) {
-                            wWords.add(cleanWord);
+                            wordsList.add(cleanWord);
                         }
                     }
                 }
@@ -30,7 +30,7 @@ public class FileWork {
             return new String[0];
         }
 
-        String[] result = wWords.toArray(new String[0]);
+        String[] result = wordsList.toArray(new String[0]);
         Arrays.sort(result);
         return result;
     }
