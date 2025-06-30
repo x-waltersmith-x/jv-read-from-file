@@ -17,7 +17,7 @@ public class FileWork {
                 String[] words = line.split("[\\s\\p{Punct}]+");
 
                 for (String word : words) {
-                    if (!word.isEmpty() && (word.toLowerCase().startsWith("w"))) {
+                    if (!word.isEmpty()) {
                         String cleanWord = word.replaceAll("\\p{Punct}", "").toLowerCase();
 
                         if (cleanWord.startsWith("w")) {
